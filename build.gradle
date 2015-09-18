@@ -24,10 +24,13 @@ app {
 }
 
 ext {
-    xpVersion = '6.0.0'
+    xpVersion = '6.1.0-SNAPSHOT'
 }
 
 dependencies {
+    compile "com.enonic.xp:core-api:${xpVersion}"
+    compile "com.enonic.xp:script-api:${xpVersion}"
+    compile "com.enonic.xp:portal-api:${xpVersion}"
     include "com.enonic.xp:lib-content:${xpVersion}"
     include "com.enonic.xp:lib-portal:${xpVersion}"
     include "com.enonic.xp:lib-thymeleaf:${xpVersion}"
