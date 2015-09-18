@@ -2,6 +2,9 @@ package com.enonic.app.gallery;
 
 import javax.servlet.http.Part;
 
+import com.google.common.io.ByteSource;
+import com.google.common.io.ByteStreams;
+
 public final class UploadPart
 {
     private final Part part;
@@ -24,5 +27,12 @@ public final class UploadPart
     public long getSize()
     {
         return this.part.getSize();
+    }
+
+    public ByteSource getBytes()
+        throws Exception
+    {
+        final byte[] data = ByteStreams.toByteArray( this.part.getInputStream() );
+        return ByteSource.wrap( data );
     }
 }
