@@ -1,16 +1,14 @@
 <div>
-    <h1>Hello image-gallery</h1>
+    <div class="container">
+        <div class="row">
 
-	<div class="container">
-		<div class="row">
+            <div data-th-each="image : ${imagelist}" class="col-md-4">
+                <a data-th-href="${image.href}">
+                    <img src="../whatever.png" data-th-src="${image.src}"/>
+                </a><br/>
+            </div>
 
-			<div data-th-each="image : ${imagelist}" class="col-md-4">
-				<a data-th-href="${image.href}">
-					<img src="../whatever.png" data-th-src="${image.src}" />
-				</a><br />
-			</div>
-
-		</div>
-	</div>
+        </div>
+    </div>
 
 </div>
