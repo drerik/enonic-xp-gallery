@@ -21,7 +21,7 @@ function handleGet(req) {
             sort: '_modifiedTime ASC'
         });
 
-        log.info("Result" + JSON.stringify(result));
+        //log.info("Result" + JSON.stringify(result));
 
         var hits = result.hits;
 
@@ -36,13 +36,13 @@ function handleGet(req) {
                 format: 'jpeg'
             });
 
-            log.info("Image" + JSON.stringify(image));
+            //log.info("Image" + JSON.stringify(image));
 
             images.push(image);
         }
 
         var params = {
-            imageList: images
+            imagelist: images
         };
 
         var view = resolve('image-gallery.html');
