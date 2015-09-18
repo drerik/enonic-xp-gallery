@@ -1,3 +1,14 @@
 <div>
     <h1>Hello image-gallery</h1>
+
+	<div class="container">
+		<div class="row image-list">
+
+			<div data-th-each="image : ${imagelist}" class="col-md-4 col-sm-12">
+				<a href="#" class="magnifyme_gallery" data-th-href="${image.href}" data-th-style="${'background-image:url(' +  image.src + ');'}" />
+			</div>
+
+		</div>
+	</div>
+
 </div>
