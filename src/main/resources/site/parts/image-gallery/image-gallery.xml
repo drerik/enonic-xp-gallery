@@ -10,7 +10,17 @@
       </config>
     </input>
     <input name="maxImages" type="Long">
-      <label>Max iages</label>
+      <label>Max images</label>
+      <occurrences minimum="0" maximum="1"/>
+      <config/>
+    </input>
+    <input name="width" type="Long">
+      <label>Width</label>
+      <occurrences minimum="0" maximum="1"/>
+      <config/>
+    </input>
+    <input name="heigth" type="Long">
+      <label>Heigth</label>
       <occurrences minimum="0" maximum="1"/>
       <config/>
     </input>

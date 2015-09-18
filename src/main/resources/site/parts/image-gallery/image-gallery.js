@@ -10,9 +10,9 @@ function handleGet(req) {
 
     function renderView() {
         var component = portal.getComponent();
-        var folderId = component.config.imageFolder ? component.config.imageFolder : "56aee7e0-e62f-4b90-83dd-537225d1ddc3";
-
-        var maxImage = component.config.maxImages ? component.config.maxImages : 10;
+        var config = component.config;
+        var folderId = config.imageFolder ? config.imageFolder : "56aee7e0-e62f-4b90-83dd-537225d1ddc3";
+        var maxImage = config.maxImages ? config.maxImages : 10;
 
         var result = contentSvc.getChildren({
             key: folderId,
@@ -21,18 +21,18 @@ function handleGet(req) {
             sort: '_modifiedTime ASC'
         });
 
-        log.info("Result: " + JSON.stringify(result));
-
         var hits = result.hits;
-
         var images = [];
+
+        var width = config.width ? config.width : 300;
+        var height = config.height ? config.height : 200;
 
         // Loop through the contents and extract the needed data
         for (var i = 0; i < hits.length; i++) {
             var image = {};
             image.src = portal.imageUrl({
                 id: hits[i]._id,
-                scale: 'block(330,300)',
+                scale: 'block(' + width + ',' + height +')',
                 format: 'jpg'
             });
             image.href = portal.imageUrl({
