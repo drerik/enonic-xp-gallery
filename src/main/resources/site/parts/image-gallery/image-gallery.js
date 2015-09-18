@@ -35,6 +35,11 @@ function handleGet(req) {
                 scale: 'block(330,300)',
                 format: 'jpeg'
             });
+            image.href = portal.imageUrl({
+                id: hits[i]._id,
+                scale: 'block(1,1)',
+                format: 'jpeg'
+            });
 
             //log.info("Image" + JSON.stringify(image));
 

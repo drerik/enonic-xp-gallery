@@ -2,10 +2,12 @@
     <h1>Hello image-gallery</h1>
 
 	<div class="container">
-		<div class="row image-list">
+		<div class="row">
 
-			<div data-th-each="image : ${imagelist}" class="col-md-4 col-sm-12">
-				<img src="../whatever.png" data-th-src="${image.src}" /><br />
+			<div data-th-each="image : ${imagelist}" class="col-md-4">
+				<a href="${image.href}">
+					<img src="../whatever.png" data-th-src="${image.src}" />
+				</a><br />
 			</div>
 
 		</div>
