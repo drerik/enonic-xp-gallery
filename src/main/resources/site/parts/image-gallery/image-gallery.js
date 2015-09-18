@@ -33,12 +33,12 @@ function handleGet(req) {
             image.src = portal.imageUrl({
                 id: hits[i]._id,
                 scale: 'block(330,300)',
-                format: 'jpeg'
+                format: 'jpg'
             });
             image.href = portal.imageUrl({
                 id: hits[i]._id,
-                scale: 'block(1,1)',
-                format: 'jpeg'
+                scale: 'wide(1024)',
+                format: 'jpg'
             });
 
             //log.info("Image" + JSON.stringify(image));

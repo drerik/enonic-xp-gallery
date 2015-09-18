@@ -5,7 +5,7 @@
 		<div class="row">
 
 			<div data-th-each="image : ${imagelist}" class="col-md-4">
-				<a href="${image.href}">
+				<a data-th-href="${image.href}">
 					<img src="../whatever.png" data-th-src="${image.src}" />
 				</a><br />
 			</div>
