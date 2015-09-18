@@ -21,7 +21,7 @@ function handleGet(req) {
             sort: '_modifiedTime ASC'
         });
 
-        //log.info("Result" + JSON.stringify(result));
+        log.info("Result: " + JSON.stringify(result));
 
         var hits = result.hits;
 
@@ -40,6 +40,8 @@ function handleGet(req) {
 
             images.push(image);
         }
+
+        log.info("Images: " + JSON.stringify(imagelist));
 
         var params = {
             imagelist: images
