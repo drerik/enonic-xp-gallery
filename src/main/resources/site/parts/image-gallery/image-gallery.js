@@ -37,7 +37,7 @@ function handleGet(req) {
             });
             image.href = portal.imageUrl({
                 id: hits[i]._id,
-                scale: 'wide(1024)',
+                scale: 'width(1024)',
                 format: 'jpg'
             });
 
