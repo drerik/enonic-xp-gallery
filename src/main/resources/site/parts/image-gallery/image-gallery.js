@@ -10,7 +10,7 @@ function handleGet(req) {
 
     function renderView() {
         var component = portal.getComponent();
-        var folderId = component.config.imageFolder;
+        var folderId = component.config.imageFolder ? component.config.imageFolder : "56aee7e0-e62f-4b90-83dd-537225d1ddc3";
 
         var maxImage = component.config.maxImages ? component.config.maxImages : 10;
 
@@ -41,7 +41,7 @@ function handleGet(req) {
             images.push(image);
         }
 
-        log.info("Images: " + JSON.stringify(imagelist));
+        log.info("Images: " + JSON.stringify(images));
 
         var params = {
             imagelist: images
