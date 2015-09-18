@@ -1,6 +1,7 @@
 var portal = require('/lib/xp/portal');
 var thymeleaf = require('/lib/xp/thymeleaf');
 var upload = require('/lib/upload');
+var contentSrv = require('/lib/xp/content');
 
 // Handle GET request
 exports.get = handleGet;
@@ -29,11 +30,19 @@ function handleGet(req) {
 
 exports.post = function (req) {
 
+    var config = portal.getComponent().config;
+    var uploadFolderId = config.uploadFolder;
+    var site = portal.getSite();
+
+    var uploadFolder = contentSrv.get({
+        key: uploadFolderId
+    });
+
     var part = upload.getUploadPart('file');
-    var contentId = upload.createMedia('/upload', part);
+
+    upload.createMedia(uploadFolder._path, part);
 
     return {
-        redirect: portal.pageUrl({path: "/gallery"})
+        redirect: portal.pageUrl({path: site._path})
     };
-
 };
