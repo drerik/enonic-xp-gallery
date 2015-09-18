@@ -10,7 +10,7 @@
       </config>
     </input>
     <input name="maxImages" type="Long">
-      <label>Max iages</label>
+      <label>Max images</label>
       <occurrences minimum="0" maximum="1"/>
       <config/>
     </input>
