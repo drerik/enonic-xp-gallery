@@ -1,15 +1,15 @@
 package com.enonic.app.gallery;
 
-import org.apache.commons.fileupload.FileItem;
+import javax.servlet.http.Part;
 
 import com.google.common.io.ByteSource;
 import com.google.common.io.ByteStreams;
 
-public final class UploadPart
+public final class UploadPartUsingServlet
 {
-    private final FileItem part;
+    private final Part part;
 
-    public UploadPart( final FileItem part )
+    public UploadPartUsingServlet( final Part part )
     {
         this.part = part;
     }
